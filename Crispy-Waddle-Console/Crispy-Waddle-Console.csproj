@@ -6,4 +6,11 @@
     <RootNamespace>Crispy_Waddle_Console</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="data\PhotoAlbumData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>

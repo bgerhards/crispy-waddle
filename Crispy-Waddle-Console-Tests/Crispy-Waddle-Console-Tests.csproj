@@ -17,4 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Crispy-Waddle-Console\Crispy-Waddle-Console.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
 </Project>
