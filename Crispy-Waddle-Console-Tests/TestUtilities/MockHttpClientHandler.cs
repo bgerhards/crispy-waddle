@@ -60,7 +60,7 @@ namespace Crispy_Waddle_Console_Tests.TestUtilities
 
         private int GetAlbumIdFromUrlAsInt(string url)
         {
-            int.TryParse(GetAlbumIdFromUrl(url), out int intAlbumId);
+            int intAlbumId = int.Parse(GetAlbumIdFromUrl(url));
             return intAlbumId;
         }
 

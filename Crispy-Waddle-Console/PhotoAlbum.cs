@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Crispy_Waddle_Console
 {
@@ -6,7 +7,13 @@ namespace Crispy_Waddle_Console
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceCollection = new ServiceCollection();
+            var serviceProvider = Services.ConfigureServices(serviceCollection);
+
+            var scope = serviceProvider.CreateScope();
+            scope.ServiceProvider.GetRequiredService<IPhotoAlbumApplication>().StartAsync();
+
+            Services.DisposeServices(serviceCollection);
         }
     }
 }

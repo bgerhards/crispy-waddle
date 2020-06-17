@@ -15,5 +15,11 @@ namespace Crispy_Waddle_Console.Models
         public string Url { get; set; }
         [JsonProperty("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
+
+        public string ToString() {
+            return $"[{Id}] {Title}";
+        }
     }
+
+
 }
