@@ -1,5 +1,5 @@
 ﻿using System;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Models;
 using Xunit;
 
 namespace Crispy_Waddle_Console_Tests.Models

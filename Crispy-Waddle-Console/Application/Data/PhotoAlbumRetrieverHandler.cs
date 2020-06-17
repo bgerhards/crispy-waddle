@@ -1,5 +1,4 @@
-﻿using System;
-namespace Crispy_Waddle_Console.Data
+﻿namespace Crispy_Waddle_Console.Application.Data
 {
     public class PhotoAlbumRetrieverHandler
     {

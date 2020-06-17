@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Crispy_Waddle_Console.Data;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Data;
 
-namespace Crispy_Waddle_Console
+namespace Crispy_Waddle_Console.Application
 {
     public class PhotoAlbumApplication : IPhotoAlbumApplication
     {

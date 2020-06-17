@@ -4,8 +4,8 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
-using Crispy_Waddle_Console.Data;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Data;
+using Crispy_Waddle_Console.Application.Models;
 using Newtonsoft.Json;
 
 namespace Crispy_Waddle_Console_Tests.TestUtilities

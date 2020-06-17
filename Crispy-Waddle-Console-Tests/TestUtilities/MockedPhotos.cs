@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Models;
 
 namespace Crispy_Waddle_Console_Tests.TestUtilities
 {

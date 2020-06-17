@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Models;
 
-namespace Crispy_Waddle_Console.Data
+namespace Crispy_Waddle_Console.Application.Data
 {
     public class PhotoAlbumRetriever: IPhotoAlbumRetriever
     {

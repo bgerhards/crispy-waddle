@@ -1,7 +1,6 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Crispy_Waddle_Console.Models
+namespace Crispy_Waddle_Console.Application.Models
 {
     public class Photo
     {

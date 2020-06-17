@@ -1,5 +1,6 @@
 ﻿using System;
-using Crispy_Waddle_Console.Data;
+using Crispy_Waddle_Console.Application;
+using Crispy_Waddle_Console.Application.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Crispy_Waddle_Console

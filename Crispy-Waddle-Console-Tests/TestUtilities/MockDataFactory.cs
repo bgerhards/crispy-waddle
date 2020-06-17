@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Crispy_Waddle_Console.Models;
+using Crispy_Waddle_Console.Application.Models;
 using Newtonsoft.Json;
 
 namespace Crispy_Waddle_Console_Tests.TestUtilities

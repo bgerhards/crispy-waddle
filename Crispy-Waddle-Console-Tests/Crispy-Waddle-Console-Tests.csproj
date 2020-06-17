@@ -17,8 +17,9 @@
     <ProjectReference Include="..\Crispy-Waddle-Console\Crispy-Waddle-Console.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="TestUtilities\" />
-    <Folder Include="Models\" />
+    <Folder Include="Application\" />
+    <Folder Include="Application\Data\" />
+    <Folder Include="Application\Models\" />
   </ItemGroup>
 </Project>
