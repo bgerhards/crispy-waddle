@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Crispy_Waddle_Console.Models;
-using Newtonsoft.Json;
 
 namespace Crispy_Waddle_Console.Data
 {
@@ -20,9 +16,19 @@ namespace Crispy_Waddle_Console.Data
             return new List<Photo>() { new Photo() };
         }
 
-        public List<Photo> GetPhotosByAlbumId(string albumId)
+        public async System.Threading.Tasks.Task<List<Photo>> GetPhotosByAlbumIdAsync(int albumId)
         {
-            return new List<Photo>() { new Photo() { AlbumId = albumId } };
+            return await _httpHandler.Get<List<Photo>>(GetUrlWithAlbumId(albumId));
+        }
+
+        private string GetUrl()
+        {
+            return "https://jsonplaceholder.typicode.com/photos";
+        }
+
+        private string GetUrlWithAlbumId(int albumId)
+        {
+            return $"{GetUrl()}?albumId={albumId}";
         }
     }
 }

@@ -30,13 +30,34 @@ namespace Crispy_Waddle_Console_Tests.Data
         }
 
         [Fact]
-        public void ReturnsPhotosOnlyForTheRequestedAlbumById1()
+        public async System.Threading.Tasks.Task ReturnsPhotosOnlyForTheRequestedAlbumById1Async()
         {
-            var albumId = "1";
-            List<Photo> photos = _photoAlbumRetriever.GetPhotosByAlbumId(albumId);
+            var albumId = 1;
+            List<Photo> photos = await _photoAlbumRetriever.GetPhotosByAlbumIdAsync(albumId);
 
             Assert.NotEmpty(photos);
             Assert.Equal(albumId, photos[0].AlbumId);
         }
+
+        [Fact]
+        public async System.Threading.Tasks.Task ReturnsPhotoTitleAsyncForAlbum1()
+        {
+            var albumId = 1;
+            List<Photo> photos = await _photoAlbumRetriever.GetPhotosByAlbumIdAsync(albumId);
+
+            Assert.NotEmpty(photos);
+            Assert.Equal("Album Title Uno", photos[0].Title);
+        }
+
+        [Fact]
+        public async System.Threading.Tasks.Task ReturnsPhotoTitleAsyncForAlbum2()
+        {
+            var albumId = 2;
+            List<Photo> photos = await _photoAlbumRetriever.GetPhotosByAlbumIdAsync(albumId);
+
+            Assert.NotEmpty(photos);
+            Assert.Equal("Album Title Dos", photos[0].Title);
+        }
+
     }
 }

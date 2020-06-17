@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using Crispy_Waddle_Console.Data;
+using Crispy_Waddle_Console.Models;
+using Newtonsoft.Json;
 
 namespace Crispy_Waddle_Console_Tests.TestUtilities
 {
@@ -13,12 +18,50 @@ namespace Crispy_Waddle_Console_Tests.TestUtilities
 
         public HttpResponseMessage Get(string url)
         {
-            throw new NotImplementedException();
+            HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
+            string content;
+            if (containsAlbumId(url))
+            {
+                content = MockDataFactory.GetAllMockDataAsStringByAlbumId(GetAlbumIdFromUrlAsInt(url));
+            }
+            else
+            {
+                content = MockDataFactory.GetAllMockDataAsString();
+            }
+            httpResponseMessage.Content = new StringContent(content);
+            return httpResponseMessage;
         }
 
         public async Task<T> Get<T>(string url)
         {
-            throw new NotImplementedException();
+            string content;
+            if (containsAlbumId(url))
+            {
+                content = MockDataFactory.GetAllMockDataAsStringByAlbumId(GetAlbumIdFromUrlAsInt(url));
+            } else
+            {
+                content = MockDataFactory.GetAllMockDataAsString();
+            }
+            return await Task.Run(() => JsonConvert.DeserializeObject<T>(content));
+        }
+
+        private bool containsAlbumId(string url)
+        {
+            Uri myUri = new Uri(url);
+            string param = HttpUtility.ParseQueryString(myUri.Query).Get("albumId");
+            return !string.IsNullOrEmpty(param);
+        }
+
+        private string GetAlbumIdFromUrl(string url)
+        {
+            Uri myUri = new Uri(url);
+            return HttpUtility.ParseQueryString(myUri.Query).Get("albumId");
+        }
+
+        private int GetAlbumIdFromUrlAsInt(string url)
+        {
+            int.TryParse(GetAlbumIdFromUrl(url), out int intAlbumId);
+            return intAlbumId;
         }
 
         public Task<HttpResponseMessage> GetAsync(string url)
