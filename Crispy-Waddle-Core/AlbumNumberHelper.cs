@@ -1,5 +1,4 @@
-﻿using System;
-namespace Crispy_Waddle_Core
+﻿namespace Crispy_Waddle_Core
 {
     public static class AlbumNumberHelper
     {
