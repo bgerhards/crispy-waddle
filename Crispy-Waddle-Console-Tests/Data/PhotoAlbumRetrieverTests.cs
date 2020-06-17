@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Crispy_Waddle_Console.Data;
 using Crispy_Waddle_Console.Models;
 using Microsoft.Extensions.DependencyInjection;
-using Moq;
 using Xunit;
 
 namespace Crispy_Waddle_Console_Tests.Data
