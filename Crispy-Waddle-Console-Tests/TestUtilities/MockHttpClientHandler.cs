@@ -16,6 +16,11 @@ namespace Crispy_Waddle_Console_Tests.TestUtilities
             throw new NotImplementedException();
         }
 
+        public async Task<T> Get<T>(string url)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<HttpResponseMessage> GetAsync(string url)
         {
             throw new NotImplementedException();

@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Crispy_Waddle_Console.Data
 {
@@ -30,6 +31,13 @@ namespace Crispy_Waddle_Console.Data
         public async Task<HttpResponseMessage> PostAsync(string url, HttpContent content)
         {
             return await _httpClient.PostAsync(url, content);
+        }
+
+        public async Task<T> Get<T>(string url)
+        {
+            var responseMessage = Get(url);
+            var content = await responseMessage.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(content);
         }
     }
 }
