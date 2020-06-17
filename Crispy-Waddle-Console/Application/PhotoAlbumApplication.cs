@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Crispy_Waddle_Core;
 using Crispy_Waddle_Core.Data;
 
 namespace Crispy_Waddle_Console.Application
@@ -20,10 +21,11 @@ namespace Crispy_Waddle_Console.Application
 
         }
 
-        private async Task BeginApplication() {
+        private async Task BeginApplication()
+        {
             string albumNumber = RequestAlbumNumber();
 
-            if (ValidAlbumNumber(albumNumber))
+            if (AlbumNumberHelper.ValidNumber(albumNumber))
             {
                 await DisplayContentsOfAlbum(albumNumber);
             }
@@ -57,12 +59,6 @@ namespace Crispy_Waddle_Console.Application
         private void PrintIntroduction()
         {
             Console.WriteLine("Welcome to your Photo Album");
-        }
-
-        private bool ValidAlbumNumber(string albumNumber)
-        {
-            int.TryParse(albumNumber, out int parsedResult);
-            return parsedResult >= 1 && parsedResult <= 100;
         }
 
         private string RequestAlbumNumber()

@@ -27,6 +27,5 @@ namespace Crispy_Waddle_Core_Tests.TestUtilities
             var photos = MockedPhotos.Get();
             return JsonConvert.SerializeObject(photos.FindAll(photo => photo.AlbumId == albumId));
         }
-
     }
 }
