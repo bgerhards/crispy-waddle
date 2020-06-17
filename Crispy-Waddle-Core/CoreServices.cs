@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Crispy_Waddle_Core
 {
-    public static class CoreServices
+    public class CoreServices: IServices
     {
 
         public static void ConfigureServices(IServiceCollection services)
