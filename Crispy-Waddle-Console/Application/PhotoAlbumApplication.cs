@@ -51,7 +51,8 @@ namespace Crispy_Waddle_Console
         {
             var albumIdAsInt = int.Parse(albumNumber);
             var photos = await _photoAlbumRetriever.GetPhotosByAlbumIdAsync(albumIdAsInt);
-            photos.ForEach(PrintPhotoInfo);
+
+            photos.ForEach(photo => Console.WriteLine(photo.ToString()));
         }
 
         private void PrintIntroduction()
@@ -69,10 +70,6 @@ namespace Crispy_Waddle_Console
         {
             Console.WriteLine("Please enter the album number [1-100] to view it's contents");
             return Console.ReadLine();
-        }
-
-        private void PrintPhotoInfo(Photo photo) {
-            Console.WriteLine($"[{photo.Id}] {photo.Title}");
         }
     }
 }
