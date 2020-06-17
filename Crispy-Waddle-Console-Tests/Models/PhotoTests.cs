@@ -1,8 +1,7 @@
-﻿using System;
-using Crispy_Waddle_Console.Application.Models;
-using Xunit;
+﻿using Xunit;
+using Crispy_Waddle_Core.Models;
 
-namespace Crispy_Waddle_Console_Tests.Models
+namespace Crispy_Waddle_Core_Tests.Models
 {
     public class PhotoTests
     {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crispy-Waddle-Console", "Crispy-Waddle-Console\Crispy-Waddle-Console.csproj", "{5E0AE039-4740-48C1-A929-57A85C5B0451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crispy-Waddle-Console-Tests", "Crispy-Waddle-Console-Tests\Crispy-Waddle-Console-Tests.csproj", "{EEFC9803-F3C8-4F30-9DA0-CB42C15425F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crispy-Waddle-Core-Tests", "Crispy-Waddle-Console-Tests\Crispy-Waddle-Core-Tests.csproj", "{EEFC9803-F3C8-4F30-9DA0-CB42C15425F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crispy-Waddle-Core", "Crispy-Waddle-Core\Crispy-Waddle-Core.csproj", "{C398CC83-0DCE-42FC-8971-CE3A211BD6AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +21,9 @@ Global
 		{EEFC9803-F3C8-4F30-9DA0-CB42C15425F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFC9803-F3C8-4F30-9DA0-CB42C15425F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEFC9803-F3C8-4F30-9DA0-CB42C15425F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C398CC83-0DCE-42FC-8971-CE3A211BD6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C398CC83-0DCE-42FC-8971-CE3A211BD6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C398CC83-0DCE-42FC-8971-CE3A211BD6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C398CC83-0DCE-42FC-8971-CE3A211BD6AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,19 +1,17 @@
 ﻿using System;
-using Crispy_Waddle_Console.Application;
-using Crispy_Waddle_Core;
+using Crispy_Waddle_Core.Data;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Crispy_Waddle_Console
+namespace Crispy_Waddle_Core
 {
-    public static class Services
+    public static class CoreServices
     {
 
-        public static ServiceProvider ConfigureServices(IServiceCollection services)
+        public static void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
-            CoreServices.ConfigureServices(services);
-            services.AddSingleton<IPhotoAlbumApplication, PhotoAlbumApplication>();
-            return services.BuildServiceProvider(true);
+            services.AddTransient<IHttpHandler, HttpClientHandler>();
+            services.AddTransient<IPhotoAlbumRetriever, PhotoAlbumRetriever>();
         }
 
         public static void DisposeServices(IServiceCollection services)

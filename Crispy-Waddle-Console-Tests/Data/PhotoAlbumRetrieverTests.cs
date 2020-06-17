@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Crispy_Waddle_Console.Application.Data;
-using Crispy_Waddle_Console.Application.Models;
+using Crispy_Waddle_Core.Data;
+using Crispy_Waddle_Core.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Crispy_Waddle_Console_Tests.Application.Data
+namespace Crispy_Waddle_Core_Tests.Data
 {
     public class PhotoAlbumRetrieverTests
     {

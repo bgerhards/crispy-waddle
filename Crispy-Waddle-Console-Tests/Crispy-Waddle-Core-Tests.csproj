@@ -14,12 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Crispy-Waddle-Console\Crispy-Waddle-Console.csproj" />
+    <ProjectReference Include="..\Crispy-Waddle-Core\Crispy-Waddle-Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestUtilities\" />
-    <Folder Include="Application\" />
-    <Folder Include="Application\Data\" />
-    <Folder Include="Application\Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

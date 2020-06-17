@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Crispy_Waddle_Console.Application.Models
+namespace Crispy_Waddle_Core.Models
 {
     public class Photo
     {
@@ -15,7 +15,7 @@ namespace Crispy_Waddle_Console.Application.Models
         [JsonProperty("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
 
-        public string ToString() {
+        public override string ToString() {
             return $"[{Id}] {Title}";
         }
     }

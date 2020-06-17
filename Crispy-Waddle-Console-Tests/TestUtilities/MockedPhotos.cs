@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Crispy_Waddle_Console.Application.Models;
+﻿using System.Collections.Generic;
+using Crispy_Waddle_Core.Models;
 
-namespace Crispy_Waddle_Console_Tests.TestUtilities
+namespace Crispy_Waddle_Core_Tests.TestUtilities
 {
     public static class MockedPhotos
     {
