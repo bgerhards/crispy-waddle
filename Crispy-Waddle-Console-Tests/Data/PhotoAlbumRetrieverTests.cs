@@ -15,10 +15,21 @@ namespace Crispy_Waddle_Console_Tests.Data
         }
 
         [Fact]
-        public void ReturnPhotos() {
-            List<Photo> photos = _photoAlbumRetriever.GetPhotos();
+        public void ReturnPhotos()
+        {
+            IEnumerable<Photo> photos = _photoAlbumRetriever.GetPhotos();
 
             Assert.NotEmpty(photos);
+        }
+
+        [Fact]
+        public void ReturnsPhotosOnlyForTheRequestedAlbumById()
+        {
+            var albumId = "1";
+            List<Photo> photos = _photoAlbumRetriever.GetPhotosByAlbumId(albumId);
+
+            Assert.NotEmpty(photos);
+            Assert.Equal("1", photos[0].AlbumId);
         }
 
     }

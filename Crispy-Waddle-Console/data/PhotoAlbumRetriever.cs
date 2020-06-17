@@ -4,15 +4,18 @@ using Crispy_Waddle_Console.Models;
 
 namespace Crispy_Waddle_Console.Data
 {
-    public class PhotoAlbumRetriever
+    public class PhotoAlbumRetriever: IPhotoAlbumRetriever
     {
-        public PhotoAlbumRetriever()
-        {
+        public PhotoAlbumRetriever(){}
 
+        public List<Photo> GetPhotos()
+        {
+            return new List<Photo>() { new Photo() };
         }
 
-        public List<Photo> GetPhotos() {
-            return new List<Photo>() { new Photo() };
+        public List<Photo> GetPhotosByAlbumId(string albumId)
+        {
+            return new List<Photo>() { new Photo() { AlbumId = albumId } };
         }
     }
 }
