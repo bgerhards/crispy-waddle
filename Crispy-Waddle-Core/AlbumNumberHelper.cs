@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Crispy_Waddle_Core
 {
-    public static class AlbumNumberHelper
+    public class AlbumNumberHelper: IAlbumNumberHelper
     {
         public static bool ValidNumber(string albumNumber) {
             try {

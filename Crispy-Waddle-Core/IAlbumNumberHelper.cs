@@ -2,5 +2,6 @@
 {
     public interface IAlbumNumberHelper
     {
+        static bool ValidNumber(string albumNumber)
     }
 }
