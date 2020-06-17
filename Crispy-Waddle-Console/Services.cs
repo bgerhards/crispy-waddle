@@ -12,7 +12,8 @@ namespace Crispy_Waddle_Console
         {
             services.AddHttpClient();
             CoreServices.ConfigureServices(services);
-            services.AddSingleton<IPhotoAlbumApplication, PhotoAlbumApplication>();
+            services.AddTransient<IContentsDisplayHandler, ContentsDisplayHandler>();
+            services.AddSingleton<IPhotoAlbumApplicationHandler, PhotoAlbumApplicationHandler>();
             return services.BuildServiceProvider(true);
         }
 

@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Crispy_Waddle_Core;
-using Crispy_Waddle_Core.Data;
 
 namespace Crispy_Waddle_Console.Application
 {
-    public class PhotoAlbumApplication : IPhotoAlbumApplication
+    public class PhotoAlbumApplicationHandler : IPhotoAlbumApplicationHandler
     {
-        private readonly IPhotoAlbumRetriever _photoAlbumRetriever;
+        private readonly IContentsDisplayHandler _photoAlbumRetriever;
 
-        public PhotoAlbumApplication(IPhotoAlbumRetriever photoAlbumRetriever)
+        public PhotoAlbumApplicationHandler(IContentsDisplayHandler contentsDisplayHandler)
         {
-            _photoAlbumRetriever = photoAlbumRetriever;
+            _photoAlbumRetriever = contentsDisplayHandler;
         }
 
         public async Task StartAsync()
         {
-            PrintIntroduction();
+            Introduction.Display();
             await BeginApplication();
-
         }
 
         private async Task BeginApplication()
@@ -27,7 +25,7 @@ namespace Crispy_Waddle_Console.Application
 
             if (AlbumNumberHelper.ValidNumber(albumNumber))
             {
-                await DisplayContentsOfAlbum(albumNumber);
+                await _photoAlbumRetriever.DisplayPhotosAsync(albumNumber);
             }
             else
             {
@@ -46,19 +44,6 @@ namespace Crispy_Waddle_Console.Application
                 Console.Clear();
                 await BeginApplication();
             }
-        }
-
-        private async Task DisplayContentsOfAlbum(string albumNumber)
-        {
-            var albumIdAsInt = int.Parse(albumNumber);
-            var photos = await _photoAlbumRetriever.GetPhotosByAlbumIdAsync(albumIdAsInt);
-
-            photos.ForEach(photo => Console.WriteLine(photo.ToString()));
-        }
-
-        private void PrintIntroduction()
-        {
-            Console.WriteLine("Welcome to your Photo Album");
         }
 
         private string RequestAlbumNumber()

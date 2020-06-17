@@ -2,7 +2,7 @@
 
 namespace Crispy_Waddle_Console.Application
 {
-    public interface IPhotoAlbumApplication
+    public interface IPhotoAlbumApplicationHandler
     {
         Task StartAsync();
     }
