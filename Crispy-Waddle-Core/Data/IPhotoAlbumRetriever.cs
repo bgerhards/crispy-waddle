@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Crispy_Waddle_Core.Models;
+using Crispy_Waddle_Common.Models;
 
 namespace Crispy_Waddle_Core.Data
 {

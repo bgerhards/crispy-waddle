@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using Crispy_Waddle_Core.Models;
+using Crispy_Waddle_Common.Models;
 
 namespace Crispy_Waddle_Core_Tests.Models
 {

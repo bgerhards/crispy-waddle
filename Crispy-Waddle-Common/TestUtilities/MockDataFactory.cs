@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using Crispy_Waddle_Core.Models;
+using Crispy_Waddle_Common.Models;
 
-namespace Crispy_Waddle_Core_Tests.TestUtilities
+namespace Crispy_Waddle_Common.TestUtilities
 {
     public static class MockDataFactory
     {

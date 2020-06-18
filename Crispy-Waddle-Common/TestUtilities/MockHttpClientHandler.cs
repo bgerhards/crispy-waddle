@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
-using Crispy_Waddle_Core.Data;
+using Crispy_Waddle_Common.Data;
 using Newtonsoft.Json;
 
-namespace Crispy_Waddle_Core_Tests.TestUtilities
+namespace Crispy_Waddle_Common.TestUtilities
 {
     public class MockHttpClientHandler: IHttpHandler
     {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Crispy_Waddle_Console_Tests</RootNamespace>
+    <RootNamespace>Crispy_Waddle_Common</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -11,14 +11,13 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Crispy-Waddle-Core\Crispy-Waddle-Core.csproj" />
-    <ProjectReference Include="..\Crispy-Waddle-Common\Crispy-Waddle-Common.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
+    <Folder Include="TestUtilities\" />
     <Folder Include="Models\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

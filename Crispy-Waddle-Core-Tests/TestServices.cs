@@ -1,6 +1,6 @@
-﻿using Crispy_Waddle_Core;
-using Crispy_Waddle_Core.Data;
-using Crispy_Waddle_Core_Tests.TestUtilities;
+﻿using Crispy_Waddle_Common.Data;
+using Crispy_Waddle_Common.TestUtilities;
+using Crispy_Waddle_Core;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Crispy_Waddle_Core_Tests

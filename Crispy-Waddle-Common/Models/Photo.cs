@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Crispy_Waddle_Core.Models
+namespace Crispy_Waddle_Common.Models
 {
     public class Photo
     {

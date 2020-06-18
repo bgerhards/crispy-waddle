@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crispy_Waddle_Common.Models;
 using Crispy_Waddle_Core.Data;
-using Crispy_Waddle_Core.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 

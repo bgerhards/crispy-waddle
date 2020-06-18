@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Crispy_Waddle_Core.Data
+namespace Crispy_Waddle_Common.Data
 {
     public class HttpClientHandler: IHttpHandler
     {

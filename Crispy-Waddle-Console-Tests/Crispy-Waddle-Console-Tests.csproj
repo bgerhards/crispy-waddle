@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Crispy-Waddle-Console\Crispy-Waddle-Console.csproj" />
+    <ProjectReference Include="..\Crispy-Waddle-Common\Crispy-Waddle-Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />

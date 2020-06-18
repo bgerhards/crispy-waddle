@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Crispy_Waddle_Core.Data
+namespace Crispy_Waddle_Common.Data
 {
     public interface IHttpHandler
     {
