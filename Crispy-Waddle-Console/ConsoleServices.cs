@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Crispy_Waddle_Console
 {
-    public static class Services
+    public static class ConsoleServices
     {
 
         public static ServiceProvider ConfigureServices(IServiceCollection services)

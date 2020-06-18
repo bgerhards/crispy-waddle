@@ -9,12 +9,12 @@ namespace Crispy_Waddle_Console
         public static async Task Main(string[] args)
         {
             var serviceCollection = new ServiceCollection();
-            var serviceProvider = Services.ConfigureServices(serviceCollection);
+            var serviceProvider = ConsoleServices.ConfigureServices(serviceCollection);
 
             var scope = serviceProvider.CreateScope();
             await scope.ServiceProvider.GetRequiredService<IPhotoAlbumApplicationHandler>().StartAsync();
 
-            Services.DisposeServices(serviceCollection);
+            ConsoleServices.DisposeServices(serviceCollection);
         }
     }
 }
