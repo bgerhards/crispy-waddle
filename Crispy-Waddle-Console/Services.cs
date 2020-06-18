@@ -1,5 +1,6 @@
 ﻿using System;
 using Crispy_Waddle_Console.Application;
+using Crispy_Waddle_Console.Application.Prompts;
 using Crispy_Waddle_Core;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +13,11 @@ namespace Crispy_Waddle_Console
         {
             services.AddHttpClient();
             CoreServices.ConfigureServices(services);
-            services.AddTransient<IContentsDisplayHandler, ContentsDisplayHandler>();
-            services.AddSingleton<IPhotoAlbumApplicationHandler, PhotoAlbumApplicationHandler>();
+            services.AddTransient<IContentsDisplayHandler, ContentsDisplayHandler>()
+                .AddSingleton<IPhotoAlbumApplicationHandler, PhotoAlbumApplicationHandler>()
+                .AddTransient<Introduction>()
+                .AddTransient< RequestAlbumNumber>();
+
             return services.BuildServiceProvider(true);
         }
 

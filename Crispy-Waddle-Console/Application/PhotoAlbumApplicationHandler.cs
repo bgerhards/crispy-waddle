@@ -1,55 +1,47 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Crispy_Waddle_Core;
+using Crispy_Waddle_Console.Application.Prompts;
 
 namespace Crispy_Waddle_Console.Application
 {
     public class PhotoAlbumApplicationHandler : IPhotoAlbumApplicationHandler
     {
-        private readonly IContentsDisplayHandler _photoAlbumRetriever;
+        private readonly RequestAlbumNumber _requestAlbumNumber;
+        private readonly Introduction _introduction;
 
-        public PhotoAlbumApplicationHandler(IContentsDisplayHandler contentsDisplayHandler)
+        public PhotoAlbumApplicationHandler(RequestAlbumNumber requestAlbumNumber, Introduction introduction)
         {
-            _photoAlbumRetriever = contentsDisplayHandler;
+            _requestAlbumNumber = requestAlbumNumber;
+            _introduction = introduction;
         }
 
         public async Task StartAsync()
         {
-            Introduction.Display();
-            await BeginApplication();
+            _introduction.Display();
+            await MainLoop();
         }
 
-        private async Task BeginApplication()
+        public async Task MainLoop()
         {
-            string albumNumber = RequestAlbumNumber();
-
-            if (AlbumNumberHelper.ValidNumber(albumNumber))
-            {
-                await _photoAlbumRetriever.DisplayPhotosAsync(albumNumber);
-            }
-            else
-            {
-                Console.WriteLine("You did not enter a valid album number [1-100]. Let's try that again.");
-            }
-            await AskUserToStartOver();
+            await _requestAlbumNumber.DisplayAsync();
+            await ViewMoreContents();
         }
 
-        private async Task AskUserToStartOver()
+        public async Task ViewMoreContents()
         {
             Console.WriteLine();
             Console.WriteLine("Would you like to view contents of another album? [y/n]");
-            var restartApplication = Console.ReadLine();
-            if (restartApplication.Substring(0, 1).ToLower() == "y")
+            var userResponse = Console.ReadLine();
+            if (UserWantsToViewMoreContents(userResponse))
             {
                 Console.Clear();
-                await BeginApplication();
+                await MainLoop();
             }
         }
 
-        private string RequestAlbumNumber()
+        private bool UserWantsToViewMoreContents(string userResponse)
         {
-            Console.WriteLine("Please enter the album number [1-100] to view it's contents");
-            return Console.ReadLine();
+            return !string.IsNullOrEmpty(userResponse) && userResponse.Substring(0, 1).ToLower() == "y";
         }
     }
 }
